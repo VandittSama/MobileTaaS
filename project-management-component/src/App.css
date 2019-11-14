@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 18vmin;
+  vertical-align: top;
+  border-radius: 8px;
+}
+
+.App-header {
+  background-color: #223;
+  width: 1536px;
+  font-size: calc(20px + 0vmin);
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.App-body{
+  background-color: #dde;
+}

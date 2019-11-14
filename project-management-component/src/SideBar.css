@@ -1,0 +1,29 @@
+.SideBar {
+	width: 265px;
+  border-radius: 8px;
+	float: left;
+	margin: 0 0 0 0;
+	padding: 0;
+	list-style: none;
+	background-color: #f2f2f2;
+	border-bottom: 5px solid #ccc;
+	border-top: 5px solid #ccc; }
+.SideBar li {
+	float: none; }
+.SideBar li a {
+	display: block;
+	padding: 45px 30px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #329;
+  font-size: 20px;
+  border-bottom: 5px dotted #ccc;
+	border-right: 5px solid #ccc;
+  border-left:  5px solid #ccc;}
+.SideBar li a:hover {
+	color: #c00;
+  font-weight: 720;
+  font-size: 25px;
+  padding: 47px 30px;
+  border-radius: 20px;
+	background-color: #fff; }
