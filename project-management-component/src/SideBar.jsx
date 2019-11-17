@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 import './SideBar.css';
 
@@ -7,11 +8,11 @@ class SideBar extends React.Component{
         return (
             <div>
               <ul class="SideBar">
-                <li><a href="#">My Projects</a></li>
-                <li><a href="#">Tester Community</a></li>
-                <li><a href="#">Edit Profile</a></li>
-                <li><a href="#">My Account</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><Link to="/MyProjects">My Projects</Link></li>
+                <li><Link to="/TesterCommunity">Tester Community</Link></li>
+                <li><Link to="/EditProfile">Edit Profile</Link></li>
+                <li><Link to="/MyAccount">My Account</Link></li>
+                <li><Link to="/">Logout</Link></li>
               </ul>
             </div>
         );

@@ -10,7 +10,7 @@
 
 .App-header {
   background-color: #223;
-  width: 1536px;
+  width: 100%;
   font-size: calc(20px + 0vmin);
 }
 
@@ -19,5 +19,5 @@
 }
 
 .App-body{
-  background-color: #dde;
+   background-size: 100% auto
 }
