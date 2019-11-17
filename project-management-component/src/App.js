@@ -7,6 +7,7 @@ import PageHeader from './PageHeader';
 import NavComponent from './NavComponent';
 import SideBar from './SideBar';
 import MyProjects from './MyProjects';
+import NewProject from './NewProject';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <tr><NavComponent /></tr>
       </table>
       </header>
-      <body  background = "Page_background.jpeg" class = "App-body">
+      <body  background = "Page_background.jpeg">
         <table>
           <tr>
             <td><SideBar /></td>
@@ -29,6 +30,7 @@ function App() {
             <div>
             <Switch>
               <Route path = "/" exact component ={PageHeader} />
+              <Route path = "/NewProject" component ={NewProject} />
               <Route path = "/MyProjects" component ={MyProjects} />
               </Switch>
               </div>
