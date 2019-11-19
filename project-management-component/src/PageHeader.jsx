@@ -1,9 +1,9 @@
 import React from 'react';
 import './PageHeader.css';
 
-const PageHeader = () =>(
+const PageHeader = (props) =>(
   <div class = "Header">
-      <h2 class = "Header">Sample Project</h2>
+      <h2 class = "Header">{props.text}</h2>
   </div>
 );
 

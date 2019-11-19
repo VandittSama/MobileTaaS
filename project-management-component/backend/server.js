@@ -64,7 +64,7 @@ router.delete('/deleteData', (req, res) => {
 router.post('/putData', (req, res) => {
   let data = new Data();
 
-  const { id, message } = req.body;
+  const { id, message, projectname, description, manager_email, release_date, progress } = req.body;
 
   if ((!id && id !== 0) || !message) {
     return res.json({
@@ -74,6 +74,11 @@ router.post('/putData', (req, res) => {
   }
   data.message = message;
   data.id = id;
+  data.projectname = projectname;
+  data.description = description;
+  data.manager_email = manager_email;
+  data.release_date = release_date;
+  data.progress = progress;
   data.save((err) => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true });

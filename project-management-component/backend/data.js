@@ -6,7 +6,12 @@ const Schema = mongoose.Schema;
 const DataSchema = new Schema(
   {
     id: Number,
-    message: String
+    message: String,
+    projectname : String,
+    description : String,
+    manager_email : String,
+    release_date : String,
+    progress : String,
   },
   { timestamps: true }
 );

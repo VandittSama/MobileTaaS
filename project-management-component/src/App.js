@@ -8,16 +8,21 @@ import NavComponent from './NavComponent';
 import SideBar from './SideBar';
 import MyProjects from './MyProjects';
 import NewProject from './NewProject';
+import About from './About';
+import ViewProject from './ViewProject';
+import Login from './Login';
 
 function App() {
+  let HText = "MobileTaas";
+  document.title = "MobileTaas";
   return (
     <Router>
     <div className="App">
       <header class = "App-header">
       <table border = "0">
       <tr>
-        <td rowspan = "2" className="App-logo"><Link to = "/"><img src= "Final_logo.PNG" className="App-logo" alt="logo" align = "left"/></Link></td>
-        <td width = "100%"><PageHeader /></td>
+        <td rowspan = "2" className="App-logo"><Link to = "/About"><img src= "Final_logo.PNG" className="App-logo" alt="logo" align = "left"/></Link></td>
+        <td width = "100%"><PageHeader text = {HText}/></td>
       </tr>
       <tr><NavComponent /></tr>
       </table>
@@ -25,13 +30,16 @@ function App() {
       <body  background = "Page_background.jpeg">
         <table>
           <tr>
-            <td><SideBar /></td>
-            <td width = "100%">
+            <td valign = "top" height = "100%"><SideBar /></td>
+            <td width = "100%" height = "100%" valign = "top">
             <div>
+            <br/><br/>
             <Switch>
-              <Route path = "/" exact component ={PageHeader} />
-              <Route path = "/NewProject" component ={NewProject} />
+              <Route path = "/" exact component ={Login}  />
+              <Route path = "/NewProject" component ={NewProject}  />
+              <Route path = "/About" component ={About}  />
               <Route path = "/MyProjects" component ={MyProjects} />
+              <Route path = "/ViewProject" component ={ViewProject} />
               </Switch>
               </div>
             </td>

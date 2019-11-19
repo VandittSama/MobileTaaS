@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import './MyProjects.css';
+import './ViewProject.css';
 
-class MyProjects extends React.Component{
+class ViewProject extends React.Component{
   state = {
     data: [],
     id: 0,
@@ -16,7 +16,7 @@ class MyProjects extends React.Component{
   };
 
     componentDidMount() {
-      document.title = "My Projects";
+      document.title = "ViewProject";
       this.getDataFromDb();
       if (!this.state.intervalIsSet) {
         let interval = setInterval(this.getDataFromDb, 1000);
@@ -39,28 +39,31 @@ class MyProjects extends React.Component{
       .then((res) => this.setState({ data: res.data }));
   };
     render() {
+
       const { data } = this.state;
+      let  project_id  = this.props.location.state.id;
         return (
-          <div>
-            <div class = "NewProject">
-            <Link to="/NewProject">Create new Project</Link>
-            <br/><br/><br/><br/>
+            <div class = "ViewProject">
+            {data.id == project_id
+              ?
+              'Error while retreiving project info'
+            : data.map((dat) => (
+              <div><p><label class = "ViewProjects">Project name : </label>
+              {dat.projectname}</p>
+              <br/> <p><label class = "ViewProjects">Summary : </label>
+              {dat.description} </p>
+              <br/><p><label class = "ViewProjects">Manager Email : </label>
+              {dat.manager_email}</p>
+              <br/><p><label class = "ViewProjects">Release date : </label>
+              {dat.release_date}</p>
+              <br/><p><label class = "ViewProjects">Progress : </label>
+              {dat.progress}</p>
+              <br/><br/><br/>
             </div>
-            <div class = "MyProjects">
-            <p>Active Projects</p>
-              <ul class = "MyProjects">
-                {data.length <= 0
-                  ? <label class = "label"><br/>You don't have any active projects</label>
-                  : data.map((dat) => (
-                      <li style={{ padding: '10px' }} >
-                        <Link to={{ pathname: '/ViewProject', state: { id: dat.id, message: dat.message, data : dat } }}>{dat.projectname}</Link>
-                      </li>
-                    ))}
-              </ul>
-            </div>
+          ))}
             </div>
         );
     }
 }
 
-export default MyProjects;
+export default ViewProject;

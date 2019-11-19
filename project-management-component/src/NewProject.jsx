@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './NewProject.css';
+
 class NewProject extends Component {
   // initialize our state
   state = {
@@ -49,7 +51,7 @@ class NewProject extends Component {
 
   // our put method that uses our backend api
   // to create new query into our data base
-  putDataToDB = (message) => {
+  putDataToDB = (message, projectname, description, manager_email, release_date, progress) => {
     let currentIds = this.state.data.map((data) => data.id);
     let idToBeAdded = 0;
     while (currentIds.includes(idToBeAdded)) {
@@ -59,7 +61,14 @@ class NewProject extends Component {
     axios.post('http://localhost:3001/api/putData', {
       id: idToBeAdded,
       message: message,
+      projectname : projectname,
+      description : description,
+      manager_email : manager_email,
+      release_date : release_date,
+      progress : progress,
     });
+
+    this.props.history.push('/MyProjects');
   };
 
   // our delete method that uses our backend api
@@ -104,26 +113,45 @@ class NewProject extends Component {
     const { data } = this.state;
     return (
       <div>
-        <ul>
-          {data.length <= 0
-            ? 'NO DB ENTRIES YET'
-            : data.map((dat) => (
-                <li style={{ padding: '10px' }} key={data.message}>
-                  <span style={{ color: 'gray' }}> id: </span> {dat.id} <br />
-                  <span style={{ color: 'gray' }}> data: </span>
-                  {dat.message}
-                </li>
-              ))}
-        </ul>
-        <div style={{ padding: '10px' }}>
-          <input
+        <div class="NewProject" style={{ padding: '10px' }}>
+          Project code :     <input
             type="text"
             onChange={(e) => this.setState({ message: e.target.value })}
-            placeholder="add something in the database"
+            placeholder="Must be unique"
             style={{ width: '200px' }}
-          />
-          <button onClick={() => this.putDataToDB(this.state.message)}>
-            ADD
+          /> <br/>
+          Project name :     <input
+            type="text"
+            onChange={(e) => this.setState({ projectname: e.target.value })}
+            placeholder="Enter a name"
+            style={{ width: '200px' }}
+          /> <br/>
+          Project description :    <input
+            type="text"
+            onChange={(e) => this.setState({ description: e.target.value })}
+            placeholder="Summary of project"
+            style={{ width: '400px', height: '70px' }}
+          /> <br/>
+          Email :  <input
+            type="text"
+            onChange={(e) => this.setState({ manager_email: e.target.value })}
+            placeholder="Managers's email"
+            style={{ width: '200px' }}
+          /> <br/>
+          Release :    <input
+            type="text"
+            onChange={(e) => this.setState({ release_date: e.target.value })}
+            placeholder="Live date"
+            style={{ width: '200px' }}
+          /> <br/>
+          Progress :    <input
+            type="text"
+            onChange={(e) => this.setState({ progress: e.target.value })}
+            placeholder="metrics in %"
+            style={{ width: '200px' }}
+          /> <br/><br/><br/>
+          <button onClick={() => this.putDataToDB(this.state.message, this.state.projectname, this.state.description, this.state.manager_email, this.state.release_date, this.state.progress)}>
+            Add new Project
           </button>
         </div>
         <div style={{ padding: '10px' }}>
@@ -135,27 +163,6 @@ class NewProject extends Component {
           />
           <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
             DELETE
-          </button>
-        </div>
-        <div style={{ padding: '10px' }}>
-          <input
-            type="text"
-            style={{ width: '200px' }}
-            onChange={(e) => this.setState({ idToUpdate: e.target.value })}
-            placeholder="id of item to update here"
-          />
-          <input
-            type="text"
-            style={{ width: '200px' }}
-            onChange={(e) => this.setState({ updateToApply: e.target.value })}
-            placeholder="put new value of the item here"
-          />
-          <button
-            onClick={() =>
-              this.updateDB(this.state.idToUpdate, this.state.updateToApply)
-            }
-          >
-            UPDATE
           </button>
         </div>
       </div>
