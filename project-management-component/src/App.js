@@ -11,6 +11,11 @@ import NewProject from './NewProject';
 import About from './About';
 import ViewProject from './ViewProject';
 import Login from './Login';
+import TestRunner1 from './components/TestRunner1';
+import Automated from './components/Automated';
+import RunResults from './components/RunResults';
+import { FilePond } from 'react-filepond';
+import 'filepond/dist/filepond.min.css';
 
 function App() {
   let HText = "MobileTaas";
@@ -40,6 +45,9 @@ function App() {
               <Route path = "/About" component ={About}  />
               <Route path = "/MyProjects" component ={MyProjects} />
               <Route path = "/ViewProject" component ={ViewProject} />
+              <Route path = "/components/TestRunner1" component ={TestRunner1} />
+			  <Route path = "/components/Automated" component ={Automated} />
+        <Route path = "/components/RunResults" component ={RunResults} />
               </Switch>
               </div>
             </td>
