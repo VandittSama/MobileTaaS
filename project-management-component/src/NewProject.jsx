@@ -154,17 +154,6 @@ class NewProject extends Component {
             Add new Project
           </button>
         </div>
-        <div style={{ padding: '10px' }}>
-          <input
-            type="text"
-            style={{ width: '200px' }}
-            onChange={(e) => this.setState({ idToDelete: e.target.value })}
-            placeholder="put id of item to delete here"
-          />
-          <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
-            DELETE
-          </button>
-        </div>
       </div>
     );
   }
