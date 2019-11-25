@@ -9,12 +9,16 @@
     "concurrently": "^5.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "filepond": "^4.7.4",
+    "mdbreact": "^4.23.0",
     "mongoose": "^5.7.11",
     "morgan": "^1.9.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-filepond": "^7.0.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.2.0"
+    "react-scripts": "^3.2.0",
+    "reactstrap": "^8.1.1"
   },
   "devDependencies": {},
   "scripts": {

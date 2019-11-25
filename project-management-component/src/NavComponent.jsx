@@ -8,7 +8,7 @@ class NavComponent extends React.Component{
         return (
             <div>
               <ul class="nav">
-                <li><Link to="/components/TestRunner">Test Runner</Link></li>
+                <li><Link to="/components/TestRunner1">Test Runner</Link></li>
                 <li><Link to="/ViewProject">Project Home</Link></li>
                 <li><Link to="/BugTracker">Bug Tracker</Link></li>
                 <li><Link to="/About">About</Link></li>

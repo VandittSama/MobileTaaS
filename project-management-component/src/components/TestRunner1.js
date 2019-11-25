@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import {Link} from 'react-router-dom';
-import "./link.css"
-import classnames from 'classnames';
+import "./link.css";
 
 const TestRunner1 = (props) => {
   const [activeTab, setActiveTab] = useState('1');
@@ -21,11 +20,11 @@ const TestRunner1 = (props) => {
 	<MDBContainer fluid>
 	<MDBRow>
 
-	
+
             <MDBCol>
 			 <Card body>
 			 <CardTitle>Automated Testing</CardTitle>
-                <CardText>Automated testing will allow you to execute built-in 
+                <CardText>Automated testing will allow you to execute built-in
 			  tests or your own scripts on selected device, generating a detailed report .
 			  </CardText>
                 <Button tag={Link} to="/components/Automated">Start Execution</Button>
@@ -41,7 +40,7 @@ const TestRunner1 = (props) => {
             </MDBCol>
           </MDBRow>
 		  </MDBContainer >
-		  
+
     </div>
   );
 }

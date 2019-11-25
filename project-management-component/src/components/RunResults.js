@@ -57,9 +57,9 @@ constructor(props){
 
 render(){
   return (
+    <div>
     <h1> Test Results </h1>
 <div style={divStyle}>
-
 <table style={tableStyle}>
 <tr>
 <th style={cellStyle}> Status </th>
@@ -93,11 +93,11 @@ BUILTIN_FUZZ
 </td>
 </tr>
 </table>
-
-    </div>
+</div>
+</div>
     );
 }
-    
+
 }
 
 export default RunResults;

@@ -1,18 +1,11 @@
 import React, { Component, useState } from 'react';
 import { Container,Form,Dropdown,
   FormGroup, Label, Row, Col,Card,Button } from 'reactstrap';
-import classnames from 'classnames';
 import { FilePond } from 'react-filepond';
-import StepZilla from "react-stepzilla";
 import {Link} from 'react-router-dom';
 
 
 
-
-  
-
- 
-  
 const divStyle ={
   width: '800px',
   borderRadius: '8px',
@@ -28,7 +21,7 @@ const divStyle ={
 const head ={
   fontSize : '20px',
   float : 'center',
-  
+
 }
 const headDiv ={
   fontSize : '25px',
@@ -63,9 +56,9 @@ class Automated extends Component {
   </tr>
   <tr>
   <td>
-    <Label  >Upload application file(.apk)</Label> 
+    <Label  >Upload application file(.apk)</Label>
    </td><td width="400px">
-     <FilePond /></td> </tr> 
+     <FilePond /></td> </tr>
     <tr>
     <td>
      <Label>Select Device </Label>
@@ -108,18 +101,18 @@ Upload test script file if applicable
  <FilePond />
  </td>
  </tr>
-</table> 
-<Button float="left" type="reset" tag={Link} to="/components/TestRunner1"> Cancel </Button> 
-&nbsp;&nbsp;&nbsp;&nbsp; 
+</table>
+<Button float="left" type="reset" tag={Link} to="/components/TestRunner1"> Cancel </Button>
+&nbsp;&nbsp;&nbsp;&nbsp;
 <Button tag={Link} to="/components/RunResults"> Next </Button>
   </div>
 
 
 
-    
+
   );
   }
-  
-} 
+
+}
 
 export default Automated;

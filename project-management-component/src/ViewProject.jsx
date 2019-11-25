@@ -33,15 +33,11 @@ class ViewProject extends React.Component{
       }
     }
 
-  getProject = () => {
-      let projects = data.parse();
-    }
-
   getDataFromDb = () => {
     fetch('http://localhost:3001/api/getData')
       .then((data) => data.json())
       .then((res) => this.setState({ data: res.data }));
-  };
+  };1
     render() {
 
       const { data } = this.state;

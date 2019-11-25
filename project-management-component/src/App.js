@@ -14,8 +14,6 @@ import Login from './Login';
 import TestRunner1 from './components/TestRunner1';
 import Automated from './components/Automated';
 import RunResults from './components/RunResults';
-import { FilePond } from 'react-filepond';
-import 'filepond/dist/filepond.min.css';
 
 function App() {
   let HText = "MobileTaas";
